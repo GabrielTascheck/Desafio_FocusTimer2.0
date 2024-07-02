@@ -6,3 +6,4 @@ export const seconds = document.getElementById('seconds')
 
 export const sounds = document.getElementById('sounds')
 
+export const body = document.body;

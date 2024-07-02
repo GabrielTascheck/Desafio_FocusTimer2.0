@@ -1,11 +1,12 @@
-import * as state from './state.js'
+import state from './state.js'
 import * as el from './elements.js'
-
+import * as action from './actions.js'
 export function updateDisplay(minutes, seconds){
   minutes = minutes ?? state.minutes
   seconds = seconds ?? state.seconds
 
-  
+  el.minutes.textContent = String(minutes).padStart(2,'0')
+  el.seconds.textContent = String(seconds).padStart(2,'0')
 }
 
 export function countdown(){
@@ -20,6 +21,8 @@ export function countdown(){
   let minutes = Number(el.minutes.textContent)
   let seconds = Number(el.seconds.textContent)
 
+  console.log
+  
   seconds--
 
   if(seconds < 0)
@@ -29,7 +32,7 @@ export function countdown(){
   }
   if(minutes < 0)
   {
-    reset(); //fazer no actions
+    action.reset(); //fazer no actions
     return;
   }
 
