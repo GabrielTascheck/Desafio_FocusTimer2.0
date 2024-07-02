@@ -61,13 +61,17 @@ button
   align-items: center;
 }
 
+#countdown
+{
+  display: flex;
+}
 #timer p
 {
   font-size: 126rem;
   line-height: 117rem;
   font-weight: 500;
   color: var(--font-color);
-
+  text-align: center;
 }
 
 #controls
