@@ -5,6 +5,10 @@ import * as el from './elements.js'
 
 export function start(){
 
+  if(state.minutes <= 0 && state.seconds <= 0){
+    alert("Tempo inválido")
+    return
+  }
   if(state.isRunning)
     return
   sounds.time.play()
@@ -25,6 +29,7 @@ export function reset(){
 export function stop(){
   if(!state.isRunning)
     return
+  sounds.time.pause()
   sounds.button.play()
   state.default = false
   state.isRunning = false
@@ -55,13 +60,17 @@ export function minusButton(minutes, seconds){
   seconds = Number(el.seconds.textContent)
   el.minutes.textContent = minutes 
 
-  if(!state.default)
+  if(!state.default){
     state.minutes = minutes
+    state.seconds = seconds
+  }
 
   if(minutes < 0)
     {
       minutes = 0
       seconds = 0
+      state.seconds = 0
+      state.minutes = 0
     }
 
   timer.updateDisplay(minutes, seconds)
