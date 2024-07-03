@@ -32,6 +32,9 @@ export function stop(){
 }
 
 export function plusButton(minutes, seconds){
+  
+  // sounds.click.pause()
+  sounds.click.load()
   sounds.click.play()
   
   minutes = Number(el.minutes.textContent) + 5
@@ -44,6 +47,8 @@ export function plusButton(minutes, seconds){
 }
 
 export function minusButton(minutes, seconds){
+  
+  sounds.click.load()
   sounds.click.play()
 
   minutes = Number(el.minutes.textContent) - 5

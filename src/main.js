@@ -15,12 +15,13 @@ el.controls.addEventListener('click', function(event){
     return
 
   actions[action]()
+  
 
 })
 
 el.sounds.addEventListener('click', event => {
-
   lastSound.pause()
+  sounds.click.pause()
   sounds.click.play()
 
   const action = event.target.dataset.action;
@@ -29,6 +30,7 @@ el.sounds.addEventListener('click', event => {
 
   if(lastSound === sounds[action]){
     lastSound.pause()
+    lastSound = sounds.click
     return
   }
   
