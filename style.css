@@ -8,10 +8,12 @@
 {
   font-family: "Roboto", sans-serif;
   font-size: 6.25%;
+  --bg-color: white;
+  --opacity: 1;
   --font-color: #323238;
   --button-bg: #E1E1E6;
   --button-hover-bg: #02799D; 
-  --button-hover-color: white\\; 
+  --button-hover-color: white; 
 }
 
 .sr-only
@@ -27,25 +29,49 @@
   appearance: none;
   /* acessibilidade */
 }
+.fire{
+  --bg-color: hsl(0, 74%, 57%);
+  --button-hover-bg: #c73b18; 
+  --opacity: 0.8;
+}
+.rain{
 
+}
+.forest{
+
+}
+.coffee{
+
+}
 body{
-  /* background-color: rgb(88, 81, 81); */
   font-size: 16rem;
-  color: white;
+  height: 100vh;
+  width: 100vw;
   display: grid;
   place-content: center;
-  height: 100vh;
-  margin-top: -20rem
+  margin-top: -20rem;
+  background-color: black;
+}
+
+#container
+{
+  position: absolute;  
+  width: 100vw;
+  height: calc(100vh + 20rem);
+  background-color: var(--bg-color);
+  opacity: var(--opacity);
+  z-index: -1;
 }
 
 main
 {
   display: flex;
   gap: 192rem;
-  width: 821rem;
-  height: 336rem;
   align-items: center;
   justify-content: space-between;
+  background-color: white;
+  padding: 40rem;
+  border-radius: 50rem;
 }
 
 button
@@ -127,6 +153,6 @@ button
 
 #sounds button:active
 {
-  background: #02617e;
+  filter: brightness(0.8);
   transform: scale(0.95);
 }

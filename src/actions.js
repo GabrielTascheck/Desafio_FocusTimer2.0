@@ -45,6 +45,12 @@ export function plusButton(minutes, seconds){
   minutes = Number(el.minutes.textContent) + 5
   seconds = Number(el.seconds.textContent)
   
+  if(minutes >= 100)
+    {
+      minutes = 99
+      seconds = 59
+    }
+
   el.minutes.textContent = minutes 
   if(!state.default)
     state.minutes = minutes
