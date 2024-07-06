@@ -3,21 +3,21 @@ import state from './state.js'
 import * as timer from './timer.js'
 import * as el from './elements.js'
 
-export function start(){
+export function start() {
+  const isTimeInvalid = state.minutes <= 0 && state.seconds <= 0;
+  const isTimerRunning = state.isRunning;
 
-  if(state.minutes <= 0 && state.seconds <= 0){
-    alert("Tempo inválido")
-    return
+  if (!isTimeInvalid && !isTimerRunning) {
+    sounds.time.play();
+    state.isRunning = true;
+    state.default = true;
+    el.body.classList.add('running');
+    timer.countdown();
+  } else if (isTimeInvalid) {
+    alert("Tempo inválido");
   }
-  if(state.isRunning)
-    return
-  sounds.time.play()
-  state.isRunning = true;
-  state.default = true;
-  el.body.classList.add('running')
-  timer.countdown()
-
 }
+
 
 export function reset(){
   stop()
@@ -27,13 +27,13 @@ export function reset(){
 }
 
 export function stop(){
-  if(!state.isRunning)
-    return
-  sounds.time.pause()
-  sounds.button.play()
-  state.default = false
-  state.isRunning = false
-  el.body.classList.remove('running')
+  if(state.isRunning){
+    sounds.time.pause()
+    sounds.button.play()
+    state.default = false
+    state.isRunning = false
+    el.body.classList.remove('running')
+  }
 }
 
 export function plusButton(minutes, seconds){

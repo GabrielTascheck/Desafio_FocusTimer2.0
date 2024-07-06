@@ -8,7 +8,7 @@
 {
   font-family: "Roboto", sans-serif;
   font-size: 6.25%;
-  --bg-color: white;
+  --bg-color: rgba(255, 255, 255, 0.658);
   --opacity: 1;
   --font-color: #323238;
   --button-bg: #E1E1E6;
