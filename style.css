@@ -12,8 +12,9 @@
   --opacity: 1;
   --font-color: #323238;
   --button-bg: #E1E1E6;
-  --button-hover-bg: #02799D; 
+  --button-hover-bg: hsl(194, 97%, 31%); 
   --button-hover-color: white; 
+  --controls-hover-color: hsla(194, 97%, 31%, 0.3);
 }
 
 .sr-only
@@ -30,19 +31,30 @@
   /* acessibilidade */
 }
 .fire{
-  --bg-color: hsl(0, 74%, 57%);
-  --button-hover-bg: #c73b18; 
+  --bg-color: hsl(0, 74%, 50%);
+  --button-hover-bg: hsl(12, 78%, 44%); 
   --opacity: 0.8;
+  --controls-hover-color: hsla(12, 78%, 44%, 0.4)
 }
 .rain{
-
+  --bg-color: hsl(224, 61%, 52%);
+  --button-hover-bg: hsl(214, 86%, 57%); 
+  --opacity: 0.8;
+  --controls-hover-color: hsla(214, 86%, 57%, 0.4);
 }
 .forest{
-
+  --bg-color: hsl(123, 60%, 45%);
+  --button-hover-bg: hsl(143, 59%, 42%); 
+  --opacity: 0.8;
+  --controls-hover-color: hsla(143, 59%, 42%, 0.3);
 }
 .coffee{
-
+  --bg-color: hsl(27, 87%, 21%);
+  --button-hover-bg: hsl(27, 63%, 29%); 
+  --opacity: 0.8;
+  --controls-hover-color: hsla(27, 63%, 29%, 0.5);
 }
+
 body{
   font-size: 16rem;
   height: 100vh;
@@ -120,7 +132,7 @@ button
 {
   transform: scale(1.3);
   color: #222121;
-  background-color: rgba(2,121,157, 0.3);
+  background-color: var(--controls-hover-color);
   
 }
 
